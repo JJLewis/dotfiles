@@ -1,0 +1,84 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+if xcode-select -p 1>/dev/null
+then
+echo "Xcode Commandline Tools already installed..."
+else
+xcode-select --install
+fi
+
+if which brew
+then
+echo "Homebrew already installed..."
+else
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+tap "1password/tap"
+tap "hashicorp/tap"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "romkatv/powerlevel10k"
+brew "act"
+brew "awscli"
+brew "chezmoi"
+brew "cocoapods"
+brew "folly"
+brew "edencommon"
+brew "fizz"
+brew "wangle"
+brew "fbthrift"
+brew "fb303"
+brew "ffmpeg"
+brew "fzf"
+brew "gh"
+brew "git"
+brew "git-gui"
+brew "go"
+brew "gopls"
+brew "libffi"
+brew "nvm"
+brew "pyenv"
+brew "pyenv-virtualenv"
+brew "thefuck"
+brew "tldr"
+brew "tmux"
+brew "zsh"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+brew "hashicorp/tap/terraform"
+brew "romkatv/powerlevel10k/powerlevel10k"
+cask "1password"
+cask "1password-cli"
+cask "android-platform-tools"
+cask "android-studio"
+cask "beardedspice"
+cask "docker"
+cask "flipper"
+cask "font-fira-code"
+cask "fork"
+cask "iterm2"
+cask "maccy"
+cask "miro"
+cask "postman"
+cask "reactotron"
+cask "rectangle"
+cask "spotify"
+cask "stats"
+cask "via"
+cask "visual-studio-code"
+cask "vlc"
+cask "zulu11"
+EOF
+
+if test -f bin/chezmoi
+then
+rm bin/chezmoi
+fi
+
+{{ end -}}

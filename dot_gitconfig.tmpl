@@ -1,0 +1,14 @@
+[user]
+	name = JJLewis
+	email = {{ .email }}
+{{ range (onepassword .onepw_uuid.git_cfg_credentials).fields -}}
+{{   if (eq .label "notesPlain") -}}
+{{     .value -}}
+{{   end -}}
+{{ end }}
+[core]
+	excludesfile = {{.chezmoi.homeDir}}/.gitignore
+[push]
+	autoSetupRemote = true
+[init]
+	defaultBranch = main

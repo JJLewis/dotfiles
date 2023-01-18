@@ -1,0 +1,2 @@
+# On client projects we want the repo name hidden, but do not want to add Wakatime config to the gitignore because it's just for me.
+.wakatime-project
