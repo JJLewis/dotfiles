@@ -13,10 +13,9 @@ source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Bash Autocompletion?
+# Terraform Auto Completion
+# Running `terraform -install-autocomplete` will add this to the end of .zshrc.
 autoload -U +X bashcompinit && bashcompinit
-
-# Terraform Auto Completion?
 complete -o nospace -C $(brew --prefix)/bin/terraform terraform
 
 # ZSH Auto Suggestions
