@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Get prompted to enter charge code.
+chezmoi init
+
+# Apply
+chezmoi apply -v --interactive
