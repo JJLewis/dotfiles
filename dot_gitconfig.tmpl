@@ -1,10 +1,10 @@
 [user]
-	name = JJLewis
-	email = {{ .email }}
-{{ (onepasswordDetailsFields .onepw_uuid.git_cfg_credentials).notesPlain.value }}
+  name = JJLewis
+  email = {{ .email }}
+{{ onepasswordRead (print .mapping_base_url "dot_gitconfig--credential") }}
 [core]
-	excludesfile = {{.chezmoi.homeDir}}/.gitignore
+  excludesfile = {{.chezmoi.homeDir}}/.gitignore
 [push]
-	autoSetupRemote = true
+  autoSetupRemote = true
 [init]
-	defaultBranch = main
+  defaultBranch = main
