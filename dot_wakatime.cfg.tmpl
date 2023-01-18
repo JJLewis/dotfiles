@@ -1,10 +1,5 @@
 [settings]
-api_key ={{" "}}
-{{- range (onepassword .onepw_uuid.wakatime_api_key).fields -}}
-{{   if (eq .label "credential") -}}
-{{     .value -}}
-{{   end -}}
-{{ end }}
+api_key = {{ (onepasswordDetailsFields .onepw_uuid.wakatime_api_key).credential.value }}
 hide_file_names = true
 hide_project_names = true
 hide_branch_names = true

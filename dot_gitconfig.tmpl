@@ -1,11 +1,7 @@
 [user]
 	name = JJLewis
 	email = {{ .email }}
-{{ range (onepassword .onepw_uuid.git_cfg_credentials).fields -}}
-{{   if (eq .label "notesPlain") -}}
-{{     .value -}}
-{{   end -}}
-{{ end }}
+{{ (onepasswordDetailsFields .onepw_uuid.git_cfg_credentials).notesPlain.value }}
 [core]
 	excludesfile = {{.chezmoi.homeDir}}/.gitignore
 [push]
