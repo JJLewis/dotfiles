@@ -1,0 +1,23 @@
+#!/bin/bash
+
+cd $(chezmoi source-path)
+
+if test -f Brewfile
+then
+rm Brewfile
+fi
+
+brew bundle dump
+
+INSTALL_SCRIPT=".chezmoiscripts/darwin/run_onchange_before_install-packages.sh.tmpl"
+
+cp $INSTALL_SCRIPT backup
+
+sed -E -i '' '/^(tap|brew|cask) \"/d' $INSTALL_SCRIPT
+
+sed -i '' '/brew bundle/r Brewfile' $INSTALL_SCRIPT
+
+diff $INSTALL_SCRIPT backup
+
+rm backup
+rm Brewfile

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cd $(chezmoi source-path)
+
+INSTALL_SCRIPT=".chezmoiscripts/darwin/run_onchange_before_install-packages.sh.tmpl"
+
+git add $INSTALL_SCRIPT
+
+git commit -m "$1"
+
+git push
