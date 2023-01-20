@@ -12,3 +12,4 @@ alias git_stash_apply="git stash list | fzf | grep -Eo "stash@{\d+}" | xargs git
 alias git_stash_pop="git stash list | fzf | grep -Eo "stash@{\d+}" | xargs git stash pop"
 alias f="fuck"
 alias cz="chezmoi"
+alias publicip="curl ifconfig.me"
