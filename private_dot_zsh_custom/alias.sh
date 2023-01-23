@@ -13,3 +13,4 @@ alias git_stash_pop="git stash list | fzf | grep -Eo "stash@{\d+}" | xargs git s
 alias f="fuck"
 alias cz="chezmoi"
 alias publicip="curl ifconfig.me"
+alias tf="terraform"
