@@ -12,6 +12,11 @@
 - Launch 1Password
   - Go to Settings > Developer, and tick "Connect with 1Password CLI".
 
+- Launch iTerm2
+  - Load the settings plist from `~/.iterm2/com.googlecode.iterm2.plist`
+    - You can do this under Preferences > General > Preferences
+  - Load the profiles from `~/.iterm2/Profiles.com`
+
 ## Usage
 
 ### Add another Charge Code profile
