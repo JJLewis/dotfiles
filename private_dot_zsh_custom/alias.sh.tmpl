@@ -8,12 +8,22 @@
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias shistory="history | cut -c 8- | uniq | fzf | pbcopy"
+
 alias git_stash_apply="git stash list | fzf | grep -Eo "stash@{\d+}" | xargs git stash apply"
 alias git_stash_pop="git stash list | fzf | grep -Eo "stash@{\d+}" | xargs git stash pop"
+
 alias f="fuck"
+
 alias cz="chezmoi"
+alias cz_code="code $(chezmoi source-path)"
+
 alias publicip="curl ifconfig.me"
+
 alias tf="terraform"
+
 alias vim="nvim"
 alias vi="nvim"
-alias cz_code="code $(chezmoi source-path)"
+
+{{- if eq .chezmoi.os "darwin" -}}
+alias brew_upgrade_casks="brew upgrade $(brew  outdated --cask --greedy --quiet)"
+{{ end -}}
