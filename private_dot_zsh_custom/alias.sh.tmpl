@@ -7,7 +7,7 @@
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias shistory="history | cut -c 8- | uniq | fzf | pbcopy"
+alias shistory="history | cut -c 8- | sort | uniq | fzf | pbcopy"
 
 alias git_stash_apply="git stash list | fzf | grep -Eo "stash@{\d+}" | xargs git stash apply"
 alias git_stash_pop="git stash list | fzf | grep -Eo "stash@{\d+}" | xargs git stash pop"
@@ -26,4 +26,5 @@ alias vi="nvim"
 
 {{- if eq .chezmoi.os "darwin" -}}
 alias brew_upgrade_casks="brew upgrade $(brew  outdated --cask --greedy --quiet)"
+alias clear_logs="sudo rm /private/var/log/asl/Logs/aslmanager*"
 {{ end -}}

@@ -8,8 +8,8 @@
 :set mouse=a
 :syntax on
 
-:imap ht <Esc>
-:imap th <Esc>
+:imap mw <Esc>
+:imap wm <Esc>
 
 call plug#begin()
 
