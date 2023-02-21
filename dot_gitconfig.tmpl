@@ -4,6 +4,7 @@
 {{ onepasswordRead (print .mapping_base_url "dot_gitconfig--credential") }}
 [core]
   excludesfile = {{.chezmoi.homeDir}}/.gitignore
+  editor = nvim
 [push]
   autoSetupRemote = true
 [init]
